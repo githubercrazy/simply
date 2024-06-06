@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -69,7 +70,7 @@ body {
   align-items: center;
   color: #08573c;
   padding: 10px 20px;
-  position: relative; /* Add this to handle absolute positioning of dropdown */
+  position: relative;
 }
 
 .dropdown-content {
@@ -79,21 +80,23 @@ body {
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0s linear 0.5s;
   position: absolute;
-  top: 100%; /* Ensure dropdown appears below the button */
+  top: 100%;
+  /* Ensure dropdown appears below the button */
   width: 200px;
 }
 
 .dropdown-content a {
   display: flex;
-  text-decoration: none;
   padding: 12px 16px;
   color: #07744e;
 }
+
 .dropbtn {
   cursor: pointer;
 }
+
 .navigation li:hover .dropdown-content,
-.navigation li .dropbtn:hover + .dropdown-content {
+.navigation li .dropbtn:hover+.dropdown-content {
   opacity: 1;
   visibility: visible;
   transition-delay: 0s;
@@ -118,20 +121,82 @@ body {
 }
 
 .news-page-image {
-  display: flex;
-  height: auto;
-  width: 800px;
+  position: relative;
 }
+
 .news-page-image img {
   width: 100%;
 }
 
-.image-text {
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  color: white;
-  font-size: 24px; /* Adjust the font size as needed */
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 0;
+}
+
+.image-text a {
+  color: #000;
+  font-size: 20px;
+  padding: 5px 4px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  display: ;
+  line-height: normal;
+}
+
+.time {
+  color: #767676;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+.news-info {
+  border: 1px #08573c solid;
+  width: 100%;
+}
+
+.news-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.news-table-infos {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.news-info {
+  width: 500px;
+
+}
+
+.news-info a {
+  color: black;
+}
+
+.news-info-text-main {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.news-info-text {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
 }
