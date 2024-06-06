@@ -8,7 +8,6 @@ body {
 
 .main-container {
   width: 100%;
-  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -81,6 +80,7 @@ body {
   transition: opacity 0.5s ease, visibility 0s linear 0.5s;
   position: absolute;
   top: 100%; /* Ensure dropdown appears below the button */
+  width: 200px;
 }
 
 .dropdown-content a {
@@ -89,7 +89,9 @@ body {
   padding: 12px 16px;
   color: #07744e;
 }
-
+.dropbtn {
+  cursor: pointer;
+}
 .navigation li:hover .dropdown-content,
 .navigation li .dropbtn:hover + .dropdown-content {
   opacity: 1;
@@ -113,4 +115,23 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px #08573c solid;
+}
+
+.news-page-image {
+  display: flex;
+  height: auto;
+  width: 800px;
+}
+.news-page-image img {
+  width: 100%;
+}
+
+.image-text {
+  position: absolute;
+  color: white;
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  display: ;
 }
