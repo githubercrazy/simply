@@ -18,6 +18,7 @@ body {
 }
 
 .banner {
+  display: flex;
   width: 1180px;
   height: 100px;
 }
@@ -118,47 +119,59 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px #08573c solid;
+  border-radius: 5px;
 }
 
-.news-page-image {
+.image {
   position: relative;
 }
 
-.news-page-image img {
+.image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
 
-.text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.image-text {
   position: absolute;
   bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px 0;
+  /* Take full width of image */
+  box-sizing: border-box;
 }
 
 .image-text a {
   color: #000;
   font-size: 20px;
-  padding: 5px 4px;
   font-weight: bold;
   line-height: normal;
+  text-decoration: none;
 }
 
 .time {
   color: #767676;
   font-size: 12px;
-  margin-bottom: 5px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .news-info {
   border: 1px #08573c solid;
+  border-radius: 5px;
   width: 100%;
+  overflow: hidden;
+  height: 60px;
+  /* Add this line */
 }
-
+.news-info-main{
+  border: 1px #08573c solid;
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+}
 .news-table {
   display: flex;
   flex-direction: column;
@@ -172,17 +185,13 @@ body {
 }
 
 .news-table-infos {
-  flex: 1;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 10px;
 }
 
-.news-info {
-  width: 500px;
 
-}
 
 .news-info a {
   color: black;
@@ -199,4 +208,165 @@ body {
   display: flex;
   justify-content: center;
   font-size: 15px;
+  font-weight: bold;
+}
+
+.news-info-subtext {
+  padding-top: 5px;
+  font-size: 15px;
+  margin: 0 auto;
+  padding-left: 15px;
+}
+
+.top-rating {
+  gap: 10px;
+  justify-content: flex-start;
+  padding-left: 45px;
+}
+
+table,
+th,
+td {
+  border-right: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 300px;
+  height: 100px;
+}
+
+table,
+th,
+td:first-child {
+  border-bottom: 1px solid black;
+}
+
+table,
+th,
+td:last-child {
+  border-right: 0;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+th:nth-child(even),
+td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+/* Add this CSS to remove borders only for Monday cells */
+td.monday {
+  border-bottom: 0;
+  width: 3%;
+}
+
+table:last-child {
+  border-bottom: 0;
+}
+
+.button-27 {
+  appearance: none;
+  width: 100px;
+  background-color: #08573C;
+  border: 2px solid #08573C;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+  line-height: normal;
+  margin: 0;
+  min-width: 5px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button-27:disabled {
+  pointer-events: none;
+}
+
+.button-27:hover {
+  box-shadow:
+      rgba(8, 87, 60, 0.5) -3px -3px 15px,
+      rgba(8, 87, 60, 0.5) 3px 5px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.carousel-container {
+  width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  animation: scrollAnimation 10s linear infinite;
+  /* Adjust duration as needed */
+}
+
+.news-item {
+  flex: 0 0 calc(50% - 20px);
+  /* Adjust width so that 2 items fit with some space */
+  padding: 10px;
+  margin: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.news-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  /* Add some space below the image */
+}
+
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.prevBtn {
+  left: 10px;
+}
+
+.nextBtn {
+  right: 10px;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel:hover {
+  animation-play-state: paused;
+  /* Pause animation on hover */
 }
